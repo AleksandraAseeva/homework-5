@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>сайт для управления библиотекой книг</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="unification">
+    <nav>
+      <h1>Библиотека ваших книг</h1>
+    </nav>
+
+    <div class="container_1">
+      <div class="sidebar">
+        <p class="panelname">Список ваших книг</p>
+        <hr />
+        <div class="item"></div>
+      </div>
+    </div>
+    <div class="container_2">
+      <p id="all">Показать все</p>
+      <p id="read">Прочитано</p>
+      <p id="unread">Не прочитано</p>
+      <div class="rebootcontainer">
+        <img src="./styles/icons8-перезагрузка-64.png "
+          onmouseover="this.src='./styles/icons8-перезагрузка-64 (1).png';"
+          onmouseout="this.src='./styles/icons8-перезагрузка-64.png';" 
+          alt="кнопка перезагрузки" class="reboot"
+          onclick="location.reload(); return false;" />
+      </div>
+    </div>
+    <div class="container_3">
+      <div class="shelf">
+        <div class="bookshelf shelf">
+          <div class="cover">
+            <img class="plus" src="./styles/icons8-плюс-48.png" alt="значок добавления" />
+          </div>
+          <div class="form">
+            <div class="padding">
+              <form onsubmit="return addBook();">
+                <label id="title-label" for="title">Название:
+                  <input id="title" type="text" required placeholder=" название" /></label>
+
+                <label id="author-label" for="author">Автор:
+                  <input id="author" type="text" required placeholder=" автор" /></label>
+
+                <label id="year-label" for="year">Год издания:
+                  <input id="year" type="number" name="year" max="2024" placeholder=" год" required /></label>
+
+                <label id="genre-label" for="genre">Жанр:
+                  <input id="genre" type="text" required placeholder=" жанр" /></label>
+
+                <label for="referrer">Статус:
+                  <select class="status" id="status" name="status" required>
+                    <option value="">(выберите статус)</option>
+                    <option value="прочитано">прочитано</option>
+                    <option value="не прочитано">не прочитано</option>
+                  </select>
+                </label>
+                <input type="hidden" value="" id="bookNumber" />
+                <input id="submit" type="submit" value="Добавить" class="submit" />
+              </form>
+            </div>
+          </div>
+        </div>
+        <section class="bookList"></section>
+      </div>
+    </div>
+    <div class="container_4">
+      <p>Всего книг: <span></span></p>
+      <img class="trashcan" src="./styles/icons8-удалить-64.png" alt="иконка мусорной корзины" />
+    </div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>
